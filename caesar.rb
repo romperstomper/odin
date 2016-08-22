@@ -1,4 +1,3 @@
-require 'pry'
 class Caesar
 def shift(string, shift)
   res=[]
@@ -14,10 +13,8 @@ def shift(string, shift)
       res.push rhash[score]
     end
   end
-  puts res.join('')
+  return res.join('')
 end
 end
 
 
-c=Caesar.new
-c.shift('what a string', 5)
