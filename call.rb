@@ -20,15 +20,11 @@ def phoneCall(min1, min2_10, min11, s)
     else
       if s - min11 >= 0
         s -= min11
-          result += 1
+        result += 1
       else
         break
       end
     end
-    p "result #{result} s: #{s}"
     result
   end
 end
-
-phoneCall(3, 1, 2, 20)
-
