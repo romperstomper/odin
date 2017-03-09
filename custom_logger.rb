@@ -2,13 +2,18 @@ require 'logger'
 require 'singleton'
 class Clogger
   include Singleton
-  @@logpath = '/dev/null'
+  @@logpath = ''
+
   def self.logpath= path
     @@logpath = path
   end
 
-  @@instance ||= Logger.new(@@logpath)
   def self.instance
-    return @@instance 
+    Logger.new(@@logpath)
   end
 end
+
+Clogger.logpath = '/tmp/moo'
+l = Clogger.instance
+l.info("#{__FILE__}") { 'sjflj' }
+
